@@ -441,6 +441,99 @@
             margin-bottom: var(--spacing-xl);
         }
 
+        /* ===== Pagination Styles ===== */
+        .pagination-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: var(--spacing-xl);
+        }
+
+        .pagination {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .pagination-btn {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: var(--primary-white);
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            color: var(--dark-gray);
+            font-family: var(--font-inter);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .pagination-btn:hover:not(:disabled) {
+            background: var(--warm-gold);
+            color: var(--primary-white);
+            border-color: var(--warm-gold);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: var(--light-gray);
+            color: var(--medium-gray);
+        }
+
+        .pagination-numbers {
+            display: flex;
+            gap: var(--spacing-xs);
+            align-items: center;
+        }
+
+        .page-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-white);
+            border: 2px solid var(--border-color);
+            color: var(--dark-gray);
+            font-family: var(--font-inter);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .page-number:hover {
+            background: var(--warm-gold);
+            color: var(--primary-white);
+            border-color: var(--warm-gold);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .page-number.active {
+            background: var(--warm-gold);
+            color: var(--primary-white);
+            border-color: var(--warm-gold);
+        }
+
+        .pagination-info {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            text-align: center;
+            padding: var(--spacing-sm);
+            background: var(--primary-white);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+        }
+
         .gallery-item {
             position: relative;
             overflow: hidden;
@@ -855,6 +948,31 @@
                 gap: var(--spacing-md);
             }
 
+            /* Mobile pagination styles */
+            .pagination {
+                flex-wrap: wrap;
+                gap: var(--spacing-xs);
+            }
+
+            .pagination-numbers {
+                order: -1;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: var(--spacing-xs);
+            }
+
+            .page-number {
+                min-width: 35px;
+                height: 35px;
+                font-size: 0.8rem;
+            }
+
+            .pagination-info {
+                font-size: 0.8rem;
+                padding: var(--spacing-xs) var(--spacing-sm);
+            }
+
             .modal-nav {
                 padding: var(--spacing-sm);
                 font-size: 1.2rem;
@@ -996,30 +1114,30 @@
             </div>
 
             <div class="featured-grid" id="featuredGrid">
-                <div class="featured-item fade-in" data-title="西湖涌金门日落" data-category="风光摄影" data-description="西湖涌金门的日落美景，金色的余晖洒在湖面上，波光粼粼，美不胜收。">
-                    <img src="./images/西湖涌金门日落1.jpg" alt="西湖涌金门日落" loading="lazy">
+                <div class="featured-item fade-in" data-title="麦田CBD" data-category="城市风光" data-description="都市麦田与CBD建筑的完美结合，现代与自然的和谐共存，展现城市发展的新面貌。">
+                    <img src="./images/麦田CBD.jpg" alt="麦田CBD" loading="lazy">
                     <div class="featured-overlay">
-                        <h3 class="featured-item-title">西湖涌金门日落</h3>
+                        <h3 class="featured-item-title">麦田CBD</h3>
+                        <span class="featured-item-category">城市风光</span>
+                        <p class="featured-item-description">现代与自然的和谐共存</p>
+                    </div>
+                </div>
+
+                <div class="featured-item fade-in" data-title="秋分落日" data-category="自然风光" data-description="秋分时节的落日美景，天空被染成橙红色，层次分明，展现了大自然的壮丽色彩。">
+                    <img src="./images/秋分落日1.jpg" alt="秋分落日" loading="lazy">
+                    <div class="featured-overlay">
+                        <h3 class="featured-item-title">秋分落日</h3>
+                        <span class="featured-item-category">自然风光</span>
+                        <p class="featured-item-description">天空被染成橙红色，层次分明</p>
+                    </div>
+                </div>
+
+                <div class="featured-item fade-in" data-title="西湖俯瞰" data-category="风光摄影" data-description="从高处俯瞰西湖美景，湖光山色尽收眼底，展现了西湖的全景之美和杭州的城市风光。">
+                    <img src="./images/西湖俯瞰1.jpg" alt="西湖俯瞰" loading="lazy">
+                    <div class="featured-overlay">
+                        <h3 class="featured-item-title">西湖俯瞰</h3>
                         <span class="featured-item-category">风光摄影</span>
-                        <p class="featured-item-description">金色的余晖洒在湖面上，波光粼粼</p>
-                    </div>
-                </div>
-
-                <div class="featured-item fade-in" data-title="先照寺日落" data-category="自然风光" data-description="先照寺的日落时分，古老的寺庙在夕阳映照下显得格外庄严美丽。">
-                    <img src="./images/先照寺日落.jpg" alt="先照寺日落" loading="lazy">
-                    <div class="featured-overlay">
-                        <h3 class="featured-item-title">先照寺日落</h3>
-                        <span class="featured-item-category">自然风光</span>
-                        <p class="featured-item-description">古老的寺庙在夕阳下格外庄严</p>
-                    </div>
-                </div>
-
-                <div class="featured-item fade-in" data-title="西湖晨光" data-category="自然风光" data-description="清晨的西湖，第一缕阳光洒向湖面，薄雾缭绕，如诗如画。">
-                    <img src="./images/西湖晨光.jpg" alt="西湖晨光" loading="lazy">
-                    <div class="featured-overlay">
-                        <h3 class="featured-item-title">西湖晨光</h3>
-                        <span class="featured-item-category">自然风光</span>
-                        <p class="featured-item-description">清晨的西湖，薄雾缭绕如诗如画</p>
+                        <p class="featured-item-description">湖光山色尽收眼底，全景之美</p>
                     </div>
                 </div>
             </div>
@@ -1231,90 +1349,180 @@
         const galleryData = {
             featured: [
                 {
-                    src: './images/西湖涌金门日落1.jpg',
-                    title: '西湖涌金门日落',
+                    src: './images/麦田CBD.jpg',
+                    title: '麦田CBD',
+                    category: '城市风光',
+                    description: '都市麦田与CBD建筑的完美结合，现代与自然的和谐共存，展现城市发展的新面貌。'
+                },
+                {
+                    src: './images/秋分落日1.jpg',
+                    title: '秋分落日',
+                    category: '自然风光',
+                    description: '秋分时节的落日美景，天空被染成橙红色，层次分明，展现了大自然的壮丽色彩。'
+                },
+                {
+                    src: './images/西湖俯瞰1.jpg',
+                    title: '西湖俯瞰',
                     category: '风光摄影',
-                    description: '西湖涌金门的日落美景，金色的余晖洒在湖面上，波光粼粼，美不胜收。'
-                },
-                {
-                    src: './images/先照寺日落.jpg',
-                    title: '先照寺日落',
-                    category: '自然风光',
-                    description: '先照寺的日落时分，古老的寺庙在夕阳映照下显得格外庄严美丽。'
-                },
-                {
-                    src: './images/西湖晨光.jpg',
-                    title: '西湖晨光',
-                    category: '自然风光',
-                    description: '清晨的西湖，第一缕阳光洒向湖面，薄雾缭绕，如诗如画。'
+                    description: '从高处俯瞰西湖美景，湖光山色尽收眼底，展现了西湖的全景之美和杭州的城市风光。'
                 }
             ],
             personal: [
                 {
-                    src: './images/秋分落日1.jpg',
-                    title: '秋分落日',
-                    category: '日落风光',
-                    description: '秋分时节的落日，天空被染成橙红色，层次分明。'
+                    src: './images/先照寺日落.jpg',
+                    title: '先照寺日落',
+                    category: '寺庙景观',
+                    description: '古老寺庙的日落时分，钟声悠扬，禅意深远。'
+                },
+                {
+                    src: './images/复兴大桥.jpg',
+                    title: '复兴大桥',
+                    category: '城市桥梁',
+                    description: '现代桥梁的雄伟身姿，连接两岸的重要通道。'
+                },
+                {
+                    src: './images/夜景1.jpg',
+                    title: '城市夜景',
+                    category: '城市风光',
+                    description: '都市夜晚的璀璨灯光，现代城市的繁华景象。'
+                },
+                {
+                    src: './images/太子湾公园2.jpg',
+                    title: '太子湾公园',
+                    category: '公园景观',
+                    description: '春日公园里鲜花盛开，生机勃勃的自然景色。'
+                },
+                {
+                    src: './images/彭埠大桥.jpg',
+                    title: '彭埠大桥',
+                    category: '城市桥梁',
+                    description: '横跨钱塘江的大桥，交通要道的壮观建筑。'
+                },
+                {
+                    src: './images/打鸟.jpg',
+                    title: '飞鸟瞬间',
+                    category: '动物摄影',
+                    description: '捕捉飞鸟展翅的精彩瞬间，展现自然之美。'
                 },
                 {
                     src: './images/日落飞车.jpg',
                     title: '日落飞车',
-                    category: '日落风光',
-                    description: '夕阳下的动感瞬间，速度与光影的完美结合。'
+                    category: '动态摄影',
+                    description: '夕阳下的速度与激情，光影交错的动感瞬间。'
+                },
+                {
+                    src: './images/湘湖.jpg',
+                    title: '湘湖美景',
+                    category: '湖泊风光',
+                    description: '湘湖的湖光山色，宁静致远的江南水乡。'
+                },
+                {
+                    src: './images/秋分落日1.jpg',
+                    title: '秋分落日',
+                    category: '自然风光',
+                    description: '秋分时节的落日，天空被染成温暖的橙红色。'
+                },
+                {
+                    src: './images/秋分落日2.jpg',
+                    title: '秋分落日',
+                    category: '自然风光',
+                    description: '秋分时节的绚丽晚霞，层次分明的天空色彩。'
+                },
+                {
+                    src: './images/西湖_太子湾公园.jpg',
+                    title: '太子湾公园',
+                    category: '公园景观',
+                    description: '西湖边的太子湾公园，春意盎然的美丽景色。'
+                },
+                {
+                    src: './images/西湖俯瞰1.jpg',
+                    title: '西湖俯瞰',
+                    category: '全景风光',
+                    description: '从高处俯瞰西湖，湖光山色尽收眼底。'
+                },
+                {
+                    src: './images/西湖俯瞰2.jpg',
+                    title: '西湖远眺',
+                    category: '全景风光',
+                    description: '远眺西湖全景，城市与自然和谐相融。'
+                },
+                {
+                    src: './images/西湖晨光.jpg',
+                    title: '西湖晨光',
+                    category: '湖泊风光',
+                    description: '清晨第一缕阳光洒向湖面，薄雾缭绕。'
+                },
+                {
+                    src: './images/西湖涌金门日落1.jpg',
+                    title: '涌金门日落',
+                    category: '湖泊风光',
+                    description: '西湖涌金门的经典日落美景，金色余晖洒满湖面。'
+                },
+                {
+                    src: './images/西湖涌金门日落2.jpg',
+                    title: '涌金门日落',
+                    category: '湖泊风光',
+                    description: '夕阳西下时的涌金门，金光璀璨的湖面。'
+                },
+                {
+                    src: './images/西湖涌金门日落3.jpg',
+                    title: '涌金门日落',
+                    category: '湖泊风光',
+                    description: '西湖日落时分的另一个角度，光影变幻的美景。'
+                },
+                {
+                    src: './images/西湖群山.jpg',
+                    title: '西湖群山',
+                    category: '山景风光',
+                    description: '西湖周围的山峦起伏，云雾缭绕的诗意画面。'
+                },
+                {
+                    src: './images/西湖茅家埠荷花.jpg',
+                    title: '茅家埠荷花',
+                    category: '植物摄影',
+                    description: '西湖茅家埠的荷花，清新雅致的自然景观。'
+                },
+                {
+                    src: './images/西湖荷花_1.jpg',
+                    title: '西湖荷花',
+                    category: '植物摄影',
+                    description: '夏日西湖的荷花盛开，清香四溢，亭亭玉立。'
+                },
+                {
+                    src: './images/钱塘江.jpg',
+                    title: '钱塘江',
+                    category: '江河风光',
+                    description: '钱塘江的壮阔江面，自然风光的恢弘气势。'
+                },
+                {
+                    src: './images/钱塘江大桥火车.jpg',
+                    title: '钱塘江大桥',
+                    category: '交通景观',
+                    description: '火车通过钱塘江大桥的经典历史画面。'
+                },
+                {
+                    src: './images/青山湖日落.jpg',
+                    title: '青山湖日落',
+                    category: '湖泊风光',
+                    description: '青山湖边的落日美景，宁静致远的湖光山色。'
                 },
                 {
                     src: './images/马家坞日落.jpg',
                     title: '马家坞日落',
                     category: '日落风光',
-                    description: '马家坞的日落时分，远山如黛，夕阳如血。'
+                    description: '马家坞的日落时分，天空被染成绚丽的晚霞。'
                 },
                 {
-                    src: './images/湘湖.jpg',
-                    title: '湘湖美景',
-                    category: '自然景观',
-                    description: '湘湖的湖光山色，宁静而美丽，如诗如画。'
+                    src: './images/麦田CBD.jpg',
+                    title: '麦田CBD',
+                    category: '城市风光',
+                    description: '都市麦田与现代CBD的对比，城乡发展的新景象。'
                 },
                 {
-                    src: './images/西湖群山.jpg',
-                    title: '西湖群山',
-                    category: '自然景观',
-                    description: '西湖周围的山峦起伏，云雾缭绕，宛如仙境。'
-                },
-                {
-                    src: './images/西湖荷花_1.jpg',
-                    title: '西湖荷花',
-                    category: '自然景观',
-                    description: '夏日西湖的荷花盛开，清香四溢，美景如画。'
-                },
-                {
-                    src: './images/青山湖日落.jpg',
-                    title: '青山湖日落',
-                    category: '自然景观',
-                    description: '青山湖的日落时分，湖面倒映着夕阳的金色光芒。'
-                },
-                {
-                    src: './images/复兴大桥.jpg',
-                    title: '复兴大桥',
-                    category: '建筑桥梁',
-                    description: '复兴大桥的雄伟身姿，现代建筑与自然的完美结合。'
-                },
-                {
-                    src: './images/彭埠大桥.jpg',
-                    title: '彭埠大桥',
-                    category: '建筑桥梁',
-                    description: '彭埠大桥的夜景灯光，现代都市的繁华象征。'
-                },
-                {
-                    src: './images/钱塘江大桥火车.jpg',
-                    title: '钱塘江大桥',
-                    category: '建筑桥梁',
-                    description: '钱塘江大桥与火车的经典画面，历史与现代的交汇。'
-                },
-                {
-                    src: './images/太子湾公园2.jpg',
-                    title: '太子湾公园',
-                    category: '建筑桥梁',
-                    description: '太子湾公园的美丽景色，春天的花朵竞相开放。'
+                    src: './images/麦田CBD晚霞1.jpg',
+                    title: '麦田晚霞',
+                    category: '城市风光',
+                    description: '麦田上空的晚霞映照着现代城市的天际线。'
                 }
             ]
         };
@@ -1413,7 +1621,7 @@
         const modalNext = document.getElementById('modalNext');
 
         function openModal(imageSrc, title, description, category, galleryArray, index) {
-            modalImage.src = imageSrc;
+            console.log('Opening modal with image:', imageSrc); // Debug log
             modalImage.alt = title;
             modalTitle.textContent = title;
             modalDescription.textContent = description;
@@ -1423,6 +1631,33 @@
             currentModalIndex = index;
             currentGallery = galleryArray;
 
+            // Add error handling for image loading
+            modalImage.onerror = function() {
+                console.error('Failed to load image:', imageSrc);
+                // Show error message in modal
+                modalImage.style.display = 'none';
+                const errorDiv = document.createElement('div');
+                errorDiv.innerHTML = `
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;
+                                height: 400px; color: var(--medium-gray); font-size: 1.2rem;">
+                        <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 1rem; color: var(--warm-gold);"></i>
+                        <div>图片加载失败</div>
+                        <div style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.7;">路径: ${imageSrc}</div>
+                    </div>
+                `;
+                modalImage.parentNode.appendChild(errorDiv);
+            };
+
+            modalImage.onload = function() {
+                console.log('Image loaded successfully:', imageSrc);
+                // Remove any existing error messages
+                const errorDiv = modalImage.parentNode.querySelector('div');
+                if (errorDiv && errorDiv.innerHTML.includes('图片加载失败')) {
+                    errorDiv.remove();
+                }
+            };
+
+            modalImage.src = imageSrc;
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
 
@@ -1480,8 +1715,11 @@
                 const title = item.getAttribute('data-title');
                 const description = item.getAttribute('data-description');
                 const category = item.getAttribute('data-category');
-                const img = item.querySelector('img');
-                openModal(img.src, title, description, category, galleryData.personal, index);
+                // Use galleryData.personal data instead of DOM img.src for consistency
+                const imageData = galleryData.personal[index];
+                if (imageData) {
+                    openModal(imageData.src, title, description, category, galleryData.personal, index);
+                }
             });
         });
 
@@ -1611,11 +1849,58 @@
                 img.addEventListener('load', function() {
                     this.style.opacity = '1';
                 });
+                img.addEventListener('error', function() {
+                    console.error('Failed to load image:', this.src);
+                    this.style.opacity = '0.5';
+                    this.style.border = '2px dashed red';
+                });
             });
 
             console.log('pjmike photography gallery loaded successfully');
             console.log('Local images:', galleryData.personal.length + galleryData.featured.length, 'images found');
+
+            // Test image loading
+            testImageLoading();
         });
+
+        function testImageLoading() {
+            console.log('Testing image loading...');
+            let testCount = 0;
+            let successCount = 0;
+
+            galleryData.personal.forEach((item, index) => {
+                const img = new Image();
+                img.onload = () => {
+                    successCount++;
+                    console.log(`✓ Gallery image ${index + 1} loaded: ${item.src}`);
+                };
+                img.onerror = () => {
+                    console.error(`✗ Gallery image ${index + 1} failed to load: ${item.src}`);
+                };
+                img.src = item.src;
+                testCount++;
+            });
+
+            galleryData.featured.forEach((item, index) => {
+                const img = new Image();
+                img.onload = () => {
+                    successCount++;
+                    console.log(`✓ Featured image ${index + 1} loaded: ${item.src}`);
+                };
+                img.onerror = () => {
+                    console.error(`✗ Featured image ${index + 1} failed to load: ${item.src}`);
+                };
+                img.src = item.src;
+                testCount++;
+            });
+
+            setTimeout(() => {
+                console.log(`Image loading test complete: ${successCount}/${testCount} images loaded successfully`);
+                if (successCount < testCount) {
+                    console.warn('Some images failed to load. Check file paths and GitHub Pages deployment.');
+                }
+            }, 3000);
+        }
 
         // ===== Performance Optimization =====
         // Debounce scroll events
